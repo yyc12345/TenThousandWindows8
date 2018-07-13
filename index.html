@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>10000套Windows8</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <!-- script-->
+    <script src="core.js"></script>
+    <script src="welcome.js"></script>
+    <script src="menu.js"></script>
+    <script src="utilities.js"></script>
+</head>
+
+<body>
+    <div class="gameWindow" id="menu">
+        <div class="gameContent">
+            <p id="menuDesc">10000套Windows8</p>
+        </div>
+
+        <div class="operation" id="menuOperation">
+            <button id="menuBtn" onclick="welcome()">开始游戏</button>
+        </div>
+    </div>
+
+    <div class="gameWindow" id="welcome" style="display: none">
+        <div class="gameContent">
+            <p id="welcomeDesc"></p>
+        </div>
+
+        <div class="operation" id="welcomeOperation">
+            <button id="welcomeBtn" onclick="welcomeCore()">了解</button>
+        </div>
+    </div>
+
+    <div class="gameWindow" id="stage" style="display: none">
+        <div class="gameContent">
+            <p>第<label id="stageDay">N/A</label>天</p>
+            <p>状态: <label id="stageWeather">N/A</label></p>
+            <br \>
+            <p>剩余的Windows8: <label id="stageWindowsCount">N/A</label></p>
+            <p>钱: <label id="stageMoney">N/A</label></p>
+            <p>体力: <label id="stageEnergy">N/A</label></p>
+            <p>心理健康: <label id="stageMentalHealth">N/A</label></p>
+            <p>营养液: <label id="stageMedicine">N/A</label></p>
+            <br \>
+            <p>事件: <label id="stageDesc">N/A</label></p>
+        </div>
+
+        <div class="operation" id="stageOperation">
+                <button id="stageOperationGetup" onclick="gameSetDay()">起床</button>
+                <button id="stageOperationSell" onclick="gameSellWindows()">卖Windwos8</button>
+                <button id="stageOperationDrink" onclick="gameDrink()">喝营养液</button>
+                <button id="stageOperationTour" onclick="gameTour()" title="去旅游需要消耗额外的天数但能快速售卖Windows8">旅游</button>
+                <button id="stageOperationExercise" onclick="gameExercise()" title="增强体质，让你打倒城管！">锻炼</button>
+                <button id="stageOperationSleep" onclick="gameSetNight()">睡觉</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
