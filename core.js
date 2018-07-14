@@ -255,16 +255,16 @@ function guestProcess(para) {
         case 0:
             coreWindowsCount -= guestWanna;
             coreMoney += guestWanna * 200;
-            document.getElementById("stageGuestDialog").innerHTML += "交易完成";
+            document.getElementById("stageGuestDialog").innerHTML += "交易完成<br>";
             break;
         case 1:
-            document.getElementById("stageGuestDialog").innerHTML += "你拒绝了这笔交易";
+            document.getElementById("stageGuestDialog").innerHTML += "你拒绝了这笔交易<br>";
             break;
         case 2:
-            document.getElementById("stageGuestDialog").innerHTML += "此功能未写";
+            document.getElementById("stageGuestDialog").innerHTML += "此功能未写<br>";
             break;
         case 3:
-            document.getElementById("stageGuestDialog").innerHTML += "此功能未写";
+            document.getElementById("stageGuestDialog").innerHTML += "此功能未写<br>";
             break;
         default:
             break;
@@ -272,6 +272,7 @@ function guestProcess(para) {
     currentGuest = 0;
 
     updateGuest();
+    updateUI();
 }
 
 function newGuest() {

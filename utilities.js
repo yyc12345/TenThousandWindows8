@@ -2,6 +2,8 @@ function closeAllUI() {
     document.getElementById("stage").style.display = "none";
     document.getElementById("welcome").style.display = "none";
     document.getElementById("menu").style.display = "none";
+    document.getElementById("tutorial").style.display = "none";
+    document.getElementById("about").style.display = "none";
 }
 
 function randomNum(minNum, maxNum) {

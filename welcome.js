@@ -12,7 +12,7 @@ function welcomeCore() {
 
     switch (welcomeStep) {
         case 0:
-            document.getElementById("welcomeDesc").innerHTML = "你是一位普通的动漫画家，突然有一天，江西萍乡微软总部的一位扫地工Chris找到你并说你已经被微软总部选为特别职员，你很快地到了江西萍乡微软总部接受任命。";
+            document.getElementById("welcomeDesc").innerHTML = "你是一位普通的动漫画家，突然有一天，江西萍乡微软总部的一位清洁工Chris找到你并说你已经被微软总部选为特别职员，你很快地到了江西萍乡微软总部接受任命。";
             break;
         case 1:
             document.getElementById("welcomeDesc").innerHTML = "你的顶头上司ChickenFork向你布置了一项艰巨的任务--去一县级城市并在1年之内卖出10000份Windows8。ChickenFork解释道，是因为Windows8销量不好才出此下策，ChickenFork为了让你专心工作，没收了你的全部资产并将其存到江西萍乡微软小金库中，ChickenFork最终只给了你1000元，让你孤身一人前往小县城。小县城的市场行情不好，各大电脑商贩只能贱卖自己的商品，虽然你也降低了价格，但还是卖不出去，你只能去摆摊卖Windows8，现在，如果你在一年之内卖不完10000份Windows8，你就输了。";

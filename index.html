@@ -21,6 +21,34 @@
 
         <div class="operation" id="menuOperation">
             <button id="menuBtn" onclick="welcome()">开始游戏</button>
+            <button id="menuBtn" onclick="tutorial()">教程</button>
+            <button id="menuBtn" onclick="about()">关于</button>
+        </div>
+    </div>
+
+    <div class="gameWindow" id="tutorial" style="display: none">
+        <div class="gameContent">
+            <p>No tutorial currently.</p>
+        </div>
+
+        <div class="operation">
+            <button id="menuBtn" onclick="menu()">回到菜单</button>
+        </div>
+    </div>
+
+    <div class="gameWindow" id="about" style="display: none">
+        <div class="gameContent">
+            <p><b>10000 copies of Windows8</b></p>
+            <p>A interesting game.</p>
+            <br>
+            <p><b>Inspired from:</b></p>
+            <p>* <a href="http://tieba.baidu.com/p/2628820388">10000 apples</a></p>
+            <p>* <a href="http://tieba.baidu.com/p/3210081726">10000 eggs</a></p>
+            <p>* <i>Paper, Please</i></p>
+        </div>
+
+        <div class="operation">
+            <button id="menuBtn" onclick="menu()">回到菜单</button>
         </div>
     </div>
 
