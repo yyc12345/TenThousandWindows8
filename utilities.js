@@ -15,20 +15,14 @@ function randomNum(minNum, maxNum) {
     }
 }
 
-function setGameButtonVisibility(isDisplayed) {
-    if (isDisplayed == true) {
-        document.getElementById("stageOperationGetup").style.display = "";
-        document.getElementById("stageOperationSell").style.display = "";
-        document.getElementById("stageOperationDrink").style.display = "";
-        document.getElementById("stageOperationTour").style.display = "";
-        document.getElementById("stageOperationExercise").style.display = "";
-        document.getElementById("stageOperationSleep").style.display = "";
-    } else {
-        document.getElementById("stageOperationGetup").style.display = "none";
-        document.getElementById("stageOperationSell").style.display = "none";
-        document.getElementById("stageOperationDrink").style.display = "none";
-        document.getElementById("stageOperationTour").style.display = "none";
-        document.getElementById("stageOperationExercise").style.display = "none";
-        document.getElementById("stageOperationSleep").style.display = "none";
-    }
+function setGameButtonDisabled(isDisabled) {
+    document.getElementById("stageOperationGetup").disabled=isDisabled;
+    document.getElementById("stageOperationSleep").disabled=isDisabled;
+    document.getElementById("stageOperationSell").disabled=isDisabled;
+    document.getElementById("stageOperationAvoid").disabled=isDisabled;
+    document.getElementById("stageOperationBargain").disabled=isDisabled;
+    document.getElementById("stageOperationEmerge").disabled=isDisabled;
+    document.getElementById("stageOperationTrade").disabled=isDisabled;
+    document.getElementById("stageOperationPunishment").disabled=isDisabled;
+    document.getElementById("stageOperationRule").disabled=isDisabled;
 }

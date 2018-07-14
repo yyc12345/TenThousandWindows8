@@ -13,7 +13,7 @@
     <script src="utilities.js"></script>
 </head>
 
-<body>
+<body style="background: #ffffff">
     <div class="gameWindow" id="menu">
         <div class="gameContent">
             <p id="menuDesc">10000套Windows8</p>
@@ -35,26 +35,82 @@
     </div>
 
     <div class="gameWindow" id="stage" style="display: none">
-        <div class="gameContent">
-            <p>第<label id="stageDay">N/A</label>天</p>
-            <p>状态: <label id="stageWeather">N/A</label></p>
-            <br \>
-            <p>剩余的Windows8: <label id="stageWindowsCount">N/A</label></p>
-            <p>钱: <label id="stageMoney">N/A</label></p>
-            <p>体力: <label id="stageEnergy">N/A</label></p>
-            <p>心理健康: <label id="stageMentalHealth">N/A</label></p>
-            <p>营养液: <label id="stageMedicine">N/A</label></p>
-            <br \>
-            <p>事件: <label id="stageDesc">N/A</label></p>
+        <div>
+            <div id="stageDayDiv">
+                <p>
+                    <span>
+                        <img src="assets/time.png" style="width: 20px;height: 20px;" title="时间" />
+                    </span>
+                    <span style="color: #008CBA;">
+                        <b>
+                            第
+                            <label id="stageDay">N/A</label>天
+                        </b>
+                    </span>
+                    <span style="color: #008CBA;">
+                        <label id="stageTime">N/A</label>
+                    </span>
+
+                    <span style="margin-left: 20px;">
+                        <img id="stageWeather" src="assets/weatherSunny.png" style="width: 20px;height: 20px;" title="N/A"/>
+                    </span>
+
+                </p>
+            </div>
+
+            <div id="stageCore" style="background:url(assets/stage.png);background-size: 800px 400px;">
+                <img id="stageGuestIcon" src="" style="width: 80px;height:80px;position: absolute;margin-top: 90px;margin-left: 90px;"/>
+                <div id="stageGuestDialog" style="color: #008CBA;overflow:scroll;position: absolute;margin-top: 70px;margin-left: 180px;width: 500px;height: 100px;">
+                </div>
+
+                <div id="stageOverlay" style="display: none;">
+                    <div style="position: absolute;width: 800px;height: 400px;margin-left: 0;margin-top: 0;opacity: 0.7;background-color: black;"></div>
+                    <div id="overlayContent" style="overflow:scroll;position: absolute;width: 600px;height: 300px;margin-left: 100px;margin-top: 50px;background:url(assets/paper.bmp);">
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="stageStatusTable">
+                <table style="width: inherit;height: inherit;">
+                    <tr>
+                        <td style="width: 20%;">
+                            <img src="assets/windows.png" style="width: 20px;height: 20px;" title="剩余的Windows8" />
+                            <label style="color: #008CBA;" id="stageWindowsCount">N/A</label>
+                        </td>
+                        <td style="width: 20%;">
+                            <img src="assets/money.png" style="width: 20px;height: 20px;" title="钱" />
+                            <label style="color: #008CBA;" id="stageMoney">N/A</label>
+                        </td>
+                        <td style="width: 20%;">
+                            <img src="assets/package.png" style="width: 20px;height: 20px;" title="营养液" />
+                            <label style="color: #008CBA;" id="stageMedicine">N/A</label>
+                        </td>
+                        <td style="width: 20%;">
+                            <img src="assets/energy.png" style="width: 20px;height: 20px;" title="体力" />
+                            <label style="color: #008CBA;" id="stageEnergy">N/A</label>
+                        </td>
+                        <td style="width: 20%;">
+                            <img src="assets/mentalHealth.png" style="width: 20px;height: 20px;" title="心理健康" />
+                            <label style="color: #008CBA;" id="stageMentalHealth">N/A</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <div class="operation" id="stageOperation">
-                <button id="stageOperationGetup" onclick="gameSetDay()">起床</button>
-                <button id="stageOperationSell" onclick="gameSellWindows()">卖Windwos8</button>
-                <button id="stageOperationDrink" onclick="gameDrink()">喝营养液</button>
-                <button id="stageOperationTour" onclick="gameTour()" title="去旅游需要消耗额外的天数但能快速售卖Windows8">旅游</button>
-                <button id="stageOperationExercise" onclick="gameExercise()" title="增强体质，让你打倒城管！">锻炼</button>
-                <button id="stageOperationSleep" onclick="gameSetNight()">睡觉</button>
+            <button style="width: 50px" id="stageOperationGetup" onclick="bed(0)">起床</button>
+            <button style="width: 50px" id="stageOperationSleep" onclick="bed(1)">睡觉</button>
+            <label style="color: #008CBA;">   |   </label>
+            <button style="width: 50px" id="stageOperationSell" onclick="guestProcess(0)">卖</button>
+            <button style="width: 50px" id="stageOperationAvoid" onclick="guestProcess(1)">不卖</button>
+            <button style="width: 50px" id="stageOperationBargain" onclick="guestProcess(2)">还价</button>
+            <button style="width: 50px" id="stageOperationEmerge" onclick="guestProcess(3)">报警</button>
+            <label style="color: #008CBA;">   |   </label>
+            <button style="width: 100px" id="stageOperationTrade" onclick="showOverlay(0)">价格走势</button>
+            <button style="width: 100px" id="stageOperationPunishment" onclick="showOverlay(1)">处罚记录</button>
+            <button style="width: 100px" id="stageOperationRule" onclick="showOverlay(2)">售卖规则</button>
         </div>
 
     </div>
